@@ -1,0 +1,13 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.6 FATAL_ERROR)
+
+project(VTKITK_VesselnessMeasureImageFilter)
+
+find_package(VTK REQUIRED)
+INCLUDE(${VTK_USE_FILE})
+
+find_package(ITK REQUIRED)
+include(${ITK_USE_FILE})
+
+ADD_EXECUTABLE(VTKITK_VesselnessMeasureImageFilter VTKITK_VesselnessMeasureImageFilter.cpp vtkITKUtility.h)
+
+target_link_libraries(VTKITK_VesselnessMeasureImageFilter ${VTK_LIBRARIES}${ITK_LIBRARIES})
